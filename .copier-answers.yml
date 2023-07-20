@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 3520ce7
+_src_path: .
+default_branch: main
+docs: mkdocs
+package_name: sample_project
+project_name: Sample Project
+remote_url: git@git01.iis.fhg.de:mkj/sample-project.git
+use_bumpversion: true
+use_precommit: true
+user_name: mkj

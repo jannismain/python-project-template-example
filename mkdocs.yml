@@ -1,0 +1,27 @@
+site_name: Sample Project
+
+repo_url: https://git01.iis.fhg.de/mkj/sample-project
+repo_name: sample_project
+site_url: https://mkj.git01.iis.fhg.de/sample-project
+edit_uri: -/edit/main/docs/
+
+theme:
+  name: material
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+  - mkdocstrings:
+      default_handler: python
+      enable_inventory: true
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_root_heading: true
+            show_category_heading: false
+            show_submodules: true
+          import:
+            - https://numpy.org/doc/stable/objects.inv
