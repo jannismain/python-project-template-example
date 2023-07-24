@@ -7,8 +7,8 @@ from click.testing import CliRunner
 
 from sample_project.cli import main
 
-
 # See https://click.palletsprojects.com/testing/
+
 
 @pytest.fixture
 def cli() -> FunctionType:

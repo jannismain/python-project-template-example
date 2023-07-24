@@ -15,6 +15,10 @@ coverage:	## collect coverage data and open report in browser
 coverage-ci:
 	@CI=true $(MAKE) coverage
 
+.PHONY: lint
+lint:	## run static code checks
+	@ruff src tests
+
 
 DOCS_TARGET?=build/docs
 MKDOCS_BIN?=mkdocs
