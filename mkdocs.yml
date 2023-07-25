@@ -10,10 +10,10 @@ theme:
 
 plugins:
   - search
-  - git-revision-date-localized:
+  - git-revision-date-localized: # https://timvink.github.io/mkdocs-git-revision-date-localized-plugin
       type: timeago
       fallback_to_build_date: true
-  - mkdocstrings: # see https://mkdocs-macros-plugin.readthedocs.io/
+  - mkdocstrings: # see https://mkdocstrings.github.io/
       default_handler: python
       enable_inventory: true
       handlers:
@@ -25,3 +25,6 @@ plugins:
             show_submodules: true
           import:
             - https://numpy.org/doc/stable/objects.inv
+  - macros: # see https://mkdocs-macros-plugin.readthedocs.io/
+      include_dir: .
+      module_name: docs/macros
