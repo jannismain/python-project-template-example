@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pip install .[doc]
       - name: Build docs
-        run: mkdir -p build/docs; make docs
+        run: ls -l; mkdir -p build/docs; make docs
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v2
         with:
