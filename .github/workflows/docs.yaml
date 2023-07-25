@@ -21,10 +21,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Install dependencies
-        run: pip install .[doc]
+      - name: Setup environment
+        run: python -m venv env; env/bin/pip install .[doc]
       - name: Build docs
-        run: mkdir -p build/docs; make docs
+        run: MKDOCS_BIN=env/bin/mkdocs make docs
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v2
         with:
