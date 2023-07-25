@@ -2,7 +2,7 @@ site_name: Sample Project
 
 repo_url: https://github.com/jannismain/python-project-template-example
 repo_name: sample_project
-site_url: https://jannismain.github.com/python-project-template-example
+site_url: https://jannismain.github.io/python-project-template-example
 edit_uri: -/edit/main/docs/
 
 theme:
