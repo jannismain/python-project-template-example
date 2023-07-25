@@ -1,11 +1,11 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: 36da2d1
+_commit: c718edc
 _src_path: .
 default_branch: main
 docs: mkdocs
 package_name: sample_project
 project_name: Sample Project
-remote_url: git@git01.iis.fhg.de:mkj/sample-project.git
+remote_url: git@github.com:jannismain/python-project-template-example.git
 use_bumpversion: true
 use_precommit: true
-user_name: mkj
+user_name: jannismain

@@ -45,14 +45,14 @@ requires-python = ">=3.7"
 # authored the project, and a valid email address corresponding to the name
 # listed.
 authors = [
-  { name = "mkj", email = "mkj@iis.fhg.de" }, # Optional
+  { name = "jannismain", email = "jannismain@iis.fhg.de" }, # Optional
 ]
 
 # This should be your name or the names of the organization who currently
 # maintains the project, and a valid email address corresponding to the name
 # listed.
 maintainers = [
-  { name = "mkj", email = "mkj@iis.fhg.de" }, # Optional
+  { name = "jannismain", email = "jannismain@iis.fhg.de" }, # Optional
 ]
 
 # This field lists other packages that your project depends on to run.

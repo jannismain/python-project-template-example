@@ -1,8 +1,8 @@
 site_name: Sample Project
 
-repo_url: https://git01.iis.fhg.de/mkj/sample-project
+repo_url: https://github.com/jannismain/python-project-template-example
 repo_name: sample_project
-site_url: https://mkj.git01.iis.fhg.de/sample-project
+site_url: https://jannismain.github.com/python-project-template-example
 edit_uri: -/edit/main/docs/
 
 theme:
@@ -13,7 +13,7 @@ plugins:
   - git-revision-date-localized:
       type: timeago
       fallback_to_build_date: true
-  - mkdocstrings:
+  - mkdocstrings: # see https://mkdocs-macros-plugin.readthedocs.io/
       default_handler: python
       enable_inventory: true
       handlers:

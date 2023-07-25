@@ -2,7 +2,7 @@
 init:
 	rm -f context
 	git init -b main || echo 'Error during initialisation of git repository.'
-	git remote add origin git@git01.iis.fhg.de:mkj/sample-project.git || echo 'Error when trying to add remote to git repository.'
+	git remote add origin git@github.com:jannismain/python-project-template-example.git || echo 'Error when trying to add remote to git repository.'
 	pre-commit install || echo 'Error during installation of pre-commit hooks. Is pre-commit installed?'
 
 .PHONY: install-dev

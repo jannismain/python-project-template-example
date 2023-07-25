@@ -1,18 +1,18 @@
 # Sample Project
 
-[![documentation][badge_documentation]](https://mkj.git01.iis.fhg.de/sample-project) [![badge_pipeline][]](https://git01.iis.fhg.de/mkj/sample-project/-/pipelines) [![badge_coverage][]](https://mkj.git01.iis.fhg.de/sample-project/coverage) [![badge_maintainability][]]()
+[![documentation][badge_documentation]](https://jannismain.github.com/python-project-template-example) [![badge_pipeline][]](https://github.com/jannismain/python-project-template-example/-/pipelines) [![badge_coverage][]](https://jannismain.github.com/python-project-template-example/coverage) [![badge_maintainability][]]()
 
-[badge_documentation]: https://mkj.git01.iis.fhg.de/sample-project/badges/documentation.svg
-[badge_coverage]: https://git01.iis.fhg.de/mkj/sample-project/badges/main/coverage.svg
-[badge_pipeline]: https://git01.iis.fhg.de/mkj/sample-project/badges/main/pipeline.svg
-[badge_maintainability]: https://mkj.git01.iis.fhg.de/sample-project/badges/maintainability.svg
+[badge_documentation]: https://jannismain.github.com/python-project-template-example/badges/documentation.svg
+[badge_coverage]: https://github.com/jannismain/python-project-template-example/badges/main/coverage.svg
+[badge_pipeline]: https://github.com/jannismain/python-project-template-example/badges/main/pipeline.svg
+[badge_maintainability]: https://jannismain.github.com/python-project-template-example/badges/maintainability.svg
 
 <!-- TODO: extend readme template -->
 
 ## Installation
 
 ```console
-pip install git+https://git01.iis.fhg.de/mkj/sample-project
+pip install git+https://github.com/jannismain/python-project-template-example
 ```
 
 ## Usage
@@ -27,4 +27,4 @@ Hello, Sample Project!
 Provide the `--help` option to see supported options and arguments.
 
 ---
-*This project was created using the [Fraunhofer IIS Project Template for Python](https://git01.iis.fhg.de/mkj/iis-project-template)*
+*This project was created using my [Project Template for Python](https://github.com/jannismain/python-project-template)*
