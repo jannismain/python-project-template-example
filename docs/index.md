@@ -1,1 +1,1 @@
-# Sample Project
+{% include 'README.md' %}
