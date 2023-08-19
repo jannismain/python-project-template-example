@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: 8897d91
+_commit: 06ed052
 _src_path: .
 default_branch: main
 docs: mkdocs
@@ -7,6 +7,6 @@ package_name: sample_project
 project_name: Sample Project
 remote: github
 remote_url: git@github.com:jannismain/python-project-template-example.git
-use_bumpversion: true
+use_bumpversion: false
 use_precommit: true
 user_name: jannismain

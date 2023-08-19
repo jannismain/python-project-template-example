@@ -27,4 +27,4 @@ Hello, Sample Project!
 Provide the `--help` option to see supported options and arguments.
 
 ---
-*This project was created using my [Project Template for Python](https://github.com/jannismain/python-project-template)*
+*This project was created using the [Project Template for Python](https://github.com/jannismain/python-project-template)*
