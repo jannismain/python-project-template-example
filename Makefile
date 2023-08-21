@@ -19,11 +19,9 @@ coverage-ci:
 lint:	## run static code checks
 	@ruff src tests
 
-
+.PHONY: docs docs-live
 DOCS_TARGET?=build/docs
 MKDOCS_BIN?=mkdocs
-
-.PHONY: docs docs-live
 docs:	## build documentation
 	${MKDOCS_BIN} build --site-dir ${DOCS_TARGET}/html
 docs-live:	## serve documentation
