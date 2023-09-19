@@ -37,13 +37,13 @@ jobs:
         with:
           python-version: "3.11"
       - name: Build maintainability badge
-        run: >-
-          pip install anybadge radon
-          score=$(python -m radon cc --total-average src | tail -n 1 | cut -d' ' -f 3-4)
-          [[ "$score" = A* ]] && color="green";  [[ "$score" = B* ]] && color="green"
-          [[ "$score" = C* ]] && color="yellow"; [[ "$score" = D* ]] && color="orange_2"
-          [[ "$score" = E* ]] && color="orange"; [[ "$score" = F* ]] && color="orangered"
-          python -m anybadge --label=Maintainability --value="$score" --color="$color" -f maintainability -o
+        run: |
+          pip install anybadge radon;
+          score=$(python -m radon cc --total-average src | tail -n 1 | cut -d' ' -f 3-4);
+          [[ "$score" = A* ]] && color="green";  [[ "$score" = B* ]] && color="green";
+          [[ "$score" = C* ]] && color="yellow"; [[ "$score" = D* ]] && color="orange_2";
+          [[ "$score" = E* ]] && color="orange"; [[ "$score" = F* ]] && color="orangered";
+          python -m anybadge --label=Maintainability --value="$score" --color="$color" -f maintainability -o;
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -55,8 +55,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
       - uses: actions/setup-python@v4
         with:
           python-version: "3.11"
