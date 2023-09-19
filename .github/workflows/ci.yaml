@@ -28,10 +28,29 @@ jobs:
         with:
           name: coverage
           path: build/coverage
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{steps.deployment.outputs.page_url}}
+  maintainability:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Build maintainability badge
+        run: |
+          pip install anybadge radon
+          score=$(python -m radon cc --total-average src | tail -n 1 | cut -d' ' -f 3-4)
+          [[ "$score" = A* ]] && color="green";  [[ "$score" = B* ]] && color="green"
+          [[ "$score" = C* ]] && color="yellow"; [[ "$score" = D* ]] && color="orange_2"
+          [[ "$score" = E* ]] && color="orange"; [[ "$score" = F* ]] && color="orangered"
+          python -m anybadge --label=Maintainability --value="$score" --color="$color" -f maintainability -o
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: maintainability
+          path: maintainability.svg
+
+  docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,19 +64,38 @@ jobs:
         run: pip install .[doc]
       - name: Build docs
         run: make docs
-      - name: Build maintainability badge
-        run: |
-          pip install anybadge radon
-          mkdir -p build/docs/html/badges
-          python -m anybadge --label=Maintainability --value="$(python -m radon cc --total-average src | tail -n 1 | cut -d' ' -f 3) ($(python -m radon cc --total-average -nc src | tail -n 1 | cut -d' ' -f 4 | cut -c 2-4))" -f build/docs/html/badges/maintainability -o
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: build/docs/html
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - uses: actions/download-artifact@master
+        with:
+          name: docs
+          path: public
       - uses: actions/download-artifact@master
         with:
           name: coverage
-          path: build/docs/html/coverage
+          path: public/coverage
+      - uses: actions/download-artifact@master
+        with:
+          name: maintainability
+          path: public/badges/maintainability
       - name: Upload Pages
         uses: actions/upload-pages-artifact@v2
         with:
-          path: "build/docs/html"
+          path: public
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
