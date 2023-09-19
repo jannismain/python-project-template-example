@@ -25,6 +25,11 @@ jobs:
         run: python -m venv env; env/bin/pip install .[doc]
       - name: Build docs
         run: MKDOCS_BIN=env/bin/mkdocs make docs
+      - name: Build maintainability badge
+        run: |
+          pip install anybadge radon
+          mkdir -p build/docs/html/badges
+          python -m anybadge --label=Maintainability --value="$(python -m radon cc --total-average src | tail -n 1 | cut -d' ' -f 3) ($(python -m radon cc --total-average -nc src | tail -n 1 | cut -d' ' -f 4 | cut -c 2-4))" -f build/docs/html/badges/maintainability -o
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v2
         with:

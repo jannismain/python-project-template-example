@@ -2,7 +2,7 @@
 
 [![documentation][badge_documentation]](https://jannismain.github.io/python-project-template-example) [![badge_pipeline][]](https://github.com/jannismain/python-project-template-example/-/pipelines) [![badge_coverage][]](https://jannismain.github.io/python-project-template-example/coverage) [![badge_maintainability][]]()
 
-[badge_documentation]: https://jannismain.github.io/python-project-template-example/badges/documentation.svg
+[badge_documentation]: https://img.shields.io/badge/Documentation-main-blue
 [badge_coverage]: https://github.com/jannismain/python-project-template-example/badges/main/coverage.svg
 [badge_pipeline]: https://github.com/jannismain/python-project-template-example/badges/main/pipeline.svg
 [badge_maintainability]: https://jannismain.github.io/python-project-template-example/badges/maintainability.svg
