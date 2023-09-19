@@ -82,6 +82,7 @@ jobs:
           path: public/
       - run: ls -lR public/
       - run: mv public/maintainability public/badges
+      - run: mv public/docs/* public/. && rm -r public/docs
       - name: Upload Pages
         uses: actions/upload-pages-artifact@v2
         with:
