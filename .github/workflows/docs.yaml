@@ -1,4 +1,4 @@
-name: deploy documentation to github pages
+name: CI
 
 on:
   push:
@@ -10,7 +10,24 @@ permissions:
   id-token: write
 
 jobs:
-  # Single deploy job no building
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install project (including test requirements)
+        run: pip install .[test]
+      - name: Run tests and collect coverage
+        run: |
+          make coverage
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: build/coverage
   deploy:
     environment:
       name: github-pages
@@ -21,16 +38,23 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Setup environment
-        run: python -m venv env; env/bin/pip install .[doc]
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install doc requirements
+        run: pip install .[doc]
       - name: Build docs
-        run: MKDOCS_BIN=env/bin/mkdocs make docs
+        run: make docs
       - name: Build maintainability badge
         run: |
           pip install anybadge radon
           mkdir -p build/docs/html/badges
           python -m anybadge --label=Maintainability --value="$(python -m radon cc --total-average src | tail -n 1 | cut -d' ' -f 3) ($(python -m radon cc --total-average -nc src | tail -n 1 | cut -d' ' -f 4 | cut -c 2-4))" -f build/docs/html/badges/maintainability -o
-      - name: Upload Artifact
+      - uses: actions/download-artifact@master
+        with:
+          name: coverage
+          path: build/docs/html/coverage
+      - name: Upload Pages
         uses: actions/upload-pages-artifact@v2
         with:
           path: "build/docs/html"
