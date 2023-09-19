@@ -37,7 +37,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Build maintainability badge
-        run: |
+        run: >-
           pip install anybadge radon
           score=$(python -m radon cc --total-average src | tail -n 1 | cut -d' ' -f 3-4)
           [[ "$score" = A* ]] && color="green";  [[ "$score" = B* ]] && color="green"
