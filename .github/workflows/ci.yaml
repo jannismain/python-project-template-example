@@ -49,7 +49,6 @@ jobs:
         with:
           name: maintainability
           path: maintainability.svg
-
   docs:
     runs-on: ubuntu-latest
     steps:
@@ -67,7 +66,6 @@ jobs:
         with:
           name: docs
           path: build/docs/html
-
   deploy:
     environment:
       name: github-pages
@@ -80,16 +78,8 @@ jobs:
         uses: actions/configure-pages@v3
       - uses: actions/download-artifact@master
         with:
-          name: docs
-          path: public
-      - uses: actions/download-artifact@master
-        with:
-          name: coverage
-          path: public/coverage
-      - uses: actions/download-artifact@master
-        with:
-          name: maintainability
-          path: public/badges/maintainability
+          path: public/
+      - run: ls -lR public/
       - name: Upload Pages
         uses: actions/upload-pages-artifact@v2
         with:
