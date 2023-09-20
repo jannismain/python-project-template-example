@@ -1,12 +1,12 @@
 # Sample Project
 
-[![documentation][badge_documentation]][documentation] [![badge_pipeline][]][pipeline] [![badge_coverage][]][coverage] [![badge_maintainability][]]()
+[![badge_documentation][]][documentation] [![badge_pipeline][]][pipeline] [![badge_coverage][]][coverage] [![badge_maintainability][]]()
 
 [documentation]: https://jannismain.github.io/python-project-template-example
 [badge_documentation]: https://img.shields.io/badge/Documentation-main-blue
 [coverage]: https://jannismain.github.io/python-project-template-example/coverage
-[badge_coverage]: https://github.com/jannismain/python-project-template-example/badges/main/coverage.svg
-[badge_pipeline]: https://github.com/jannismain/python-project-template-example/badges/main/pipeline.svg
+[badge_coverage]: https://jannismain.github.io/python-project-template-example/badges/coverage.svg
+[badge_pipeline]: https://github.com/jannismain/python-project-template-example/actions/workflows/ci.yaml/badge.svg
 [pipeline]: https://github.com/jannismain/python-project-template-example/actions?query=branch%3Amain
 [badge_maintainability]: https://jannismain.github.io/python-project-template-example/badges/maintainability.svg
 
