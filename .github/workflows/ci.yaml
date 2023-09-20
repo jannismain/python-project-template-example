@@ -24,7 +24,7 @@ jobs:
         run: |
           make coverage
       - run: coverage xml
-      - run: pip install genbadge
+      - run: pip install genbadge[coverage]
       - run: genbadge coverage -i coverage.xml -o build/coverage/coverage.svg
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
