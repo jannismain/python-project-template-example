@@ -61,7 +61,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install doc requirements
-        run: pip install .[doc]
+        run: pip install -r docs/requirements.txt
       - name: Build docs
         run: make docs
       - name: Upload Artifact

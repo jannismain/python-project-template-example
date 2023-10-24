@@ -71,12 +71,6 @@ dependencies = ["click"]
 [project.optional-dependencies]
 dev = ["black", "radon", "ruff"]
 test = ["pytest", "pytest-cov", "coverage[toml]"]
-doc = [
-  "mkdocs-material",
-  "mkdocstrings[python]",
-  "mkdocs-git-revision-date-localized-plugin",
-  "mkdocs-macros-plugin",
-]
 
 # The following would provide a command line executable which executes
 # the function `main` from this package's cli module when invoked.
