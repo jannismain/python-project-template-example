@@ -85,11 +85,10 @@ jobs:
           name: docs
           path: public
       - run: ls -lR public
-      - run: mkdir -p public/badges
       - uses: actions/download-artifact@v3
         with:
           name: maintainability
-          path: public/badges/maintainability.svg
+          path: public/badges
       - uses: actions/download-artifact@v3
         with:
           name: coverage
