@@ -9,3 +9,8 @@ repos:
         exclude: .*\.dat
       - id: check-yaml
       - id: check-added-large-files
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v8.3.0
+    hooks:
+      - id: cspell
+        args: [--show-suggestions, --show-context, --no-must-find-files]

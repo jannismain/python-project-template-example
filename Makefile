@@ -28,6 +28,19 @@ docs:	## build documentation
 docs-live:	## serve documentation
 	mkdocs serve
 
+.PHONY: cspell-install
+cspell-install: ## install cspell (npm required!)
+	@cspell --version || npm install -g --no-fund cspell
+
+.PHONY: cspell cspell-dump
+CSPELL_ARGS=--show-suggestions --show-context --unique
+CSPELL_FILES="**/*.*"
+DICT_FILE=project-terms.txt
+cspell: ## check spelling using cspell
+	cspell ${CSPELL_ARGS} ${CSPELL_FILES}
+cspell-dump: ## save all flagged words to project terms dictionary
+	cspell ${CSPELL_ARGS} ${CSPELL_FILES} --words-only >> ${DICT_FILE}
+	sort --ignore-case --output=${DICT_FILE} ${DICT_FILE}
 
 .PHONY: help
 # a nice way to document Makefiles, found here: https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html

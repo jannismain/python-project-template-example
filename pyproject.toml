@@ -43,13 +43,38 @@ requires-python = ">=3.7"
 # Name or names of the individual or organization which originally authored
 # the project, and a valid email address corresponding to the name listed.
 authors = [
-  { name = "jannismain", email = "jannismain@iis.fhg.de" },
+  { name = "jannismain", email = "jmainczyk@gmail.com" },
 ]
 
 # Name or names of the individual or organization which currently maintains
 # the project, and a valid email address corresponding to the name listed.
-maintainers = [
-  { name = "jannismain", email = "jannismain@iis.fhg.de" },
+# Note: This becomes important when the original author is no longer
+# maintaining the project
+# maintainers = [{ name = "", email = "" }]
+
+# Classifiers help users find your project by categorizing it.
+#
+# For a list of valid classifiers, see https://pypi.org/classifiers/
+classifiers = [  # Optional
+  # How mature is this project? Common values are
+  #   3 - Alpha
+  #   4 - Beta
+  #   5 - Production/Stable
+  # "Development Status :: 3 - Alpha",
+
+  # Indicate who your project is intended for
+  # "Intended Audience :: Developers",
+
+  # Specify which topics this project fits in
+  # "Topic :: Software Development :: Build Tools",
+
+  # Pick your license as you wish
+  # "License :: OSI Approved :: MIT License",
+
+  # List the Python versions you support here. In particular, ensure
+  # that you indicate you support Python 3. These classifiers are *not*
+  # checked by "pip install". See instead "python_requires" below.
+  "Programming Language :: Python :: 3",
 ]
 
 # This field lists other packages that your project depends on to run.
@@ -69,7 +94,7 @@ dependencies = ["click"]
 # Similar to `dependencies` above, these must be valid existing
 # projects.
 [project.optional-dependencies]
-dev = ["black", "radon", "ruff"]
+dev = ["black", "radon", "pre-commit", "ruff"]
 test = ["pytest", "pytest-cov", "coverage[toml]"]
 
 # The following would provide a command line executable which executes
@@ -121,8 +146,7 @@ convention = "google"
 [tool.ruff.mccabe]
 # Flag errors (`C901`) whenever the complexity level exceeds 5.
 max-complexity = 5
-# Ignore `E402` (import violations) in all `__init__.py` files, and in `path/to/file.py`.
 
 [tool.ruff.per-file-ignores]
+# Ignore `E402` (import violations) in all `__init__.py` files.
 "__init__.py" = ["E402"]
-"docs/source/conf.py" = ["E402"]

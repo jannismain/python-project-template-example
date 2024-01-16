@@ -1,6 +1,6 @@
 # Sample Project
 
-[![badge_documentation][]][documentation] [![badge_pipeline][]][pipeline] [![badge_coverage][]][coverage] [![badge_maintainability][]]()
+[![badge_documentation][]][documentation] [![badge_pipeline][]][pipeline] [![badge_coverage][]][coverage] [![badge_maintainability][]][pipeline]
 
 [documentation]: https://jannismain.github.io/python-project-template-example
 [badge_documentation]: https://img.shields.io/badge/Documentation-main-blue
